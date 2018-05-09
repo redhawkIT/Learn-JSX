@@ -1,22 +1,20 @@
 import React from 'react'
-import { Route, Switch, Redirect } from 'react-router'
+import { Route } from 'react-router-dom'
 
-import UI from '../views'
+import UI from '../views/index.js'
 
 const Home = () => <div>Home</div>
+const About = () => <div>About</div>
 
 /*
 SPA Router
 Exports a single js bundle that uses hash routes
 */
-export default () => (
-  <main>
-    <UI>
-      <Switch>
-        <Route exact path='/' component={Home}/>
-        {/* <Route path="/about-us" component={About} /> */}
-        <Redirect to="/" />
-      </Switch>
-    </UI>
-  </main>
+const App = () => (
+  <UI>
+    <Route exact path="/" component={Home} />
+    <Route exact path="/about-us" component={About} />
+  </UI>
 )
+
+export default App

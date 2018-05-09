@@ -7,11 +7,11 @@ import '../styles/LESS/index.less'
 class UI extends Component {
   render () {
     return (
-      <div id='app'>
+      <main id='app'>
         <header>Header</header>
         <div id='content'>{this.props.children}</div>
         <footer>Footer</footer>
-      </div>
+      </main>
     )
   }
 }
