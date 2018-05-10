@@ -1,10 +1,18 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
-import UI from '../views/index.js'
+import UI from '../views'
+import HomePage from '../views/HomePage'
+import NotFound from '../views/NotFound'
 
-const Home = () => <div>Home</div>
-const About = () => <div>About</div>
+import ECMAScript from '../views/ECMAScript'
+import Async from '../views/Async'
+import JSX from '../views/JSX'
+import ReactPage from '../views/React'
+
+import CSS from '../views/CSS'
+import SCSS from '../views/SCSS'
+import LESS from '../views/LESS'
 
 /*
 SPA Router
@@ -12,8 +20,18 @@ Exports a single js bundle that uses hash routes
 */
 const App = () => (
   <UI>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/about-us" component={About} />
+    <Switch>
+      <Route exact path='/' component={HomePage}/>
+      <Route path="/js/ecmascript" component={ECMAScript} />
+      <Route path="/js/async" component={JSX} />
+      <Route path="/js/jsx" component={Async} />
+      <Route path="/js/react" component={ReactPage} />
+      <Route path="/style/css" component={CSS} />
+      <Route path="/style/scss" component={SCSS} />
+      <Route path="/style/less" component={LESS} />
+      <Route component={NotFound} />
+      {/* <Redirect to="/" /> */}
+    </Switch>
   </UI>
 )
 

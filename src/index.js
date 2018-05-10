@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDom from 'react-dom'
+import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import store, { history } from './flux/store'
@@ -11,11 +11,11 @@ import App from './routing/SPA'
 import registerServiceWorker from './util/registerServiceWorker'
 
 const mount = document.getElementById('root')
-ReactDom.render(
+render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <div>Div</div>
-      {/* <App /> */}
+      <App />
+      {/* <div>Div</div> */}
     </ConnectedRouter>
   </Provider>,
   mount
